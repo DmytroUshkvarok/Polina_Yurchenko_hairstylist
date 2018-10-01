@@ -1,0 +1,11 @@
+@mixin heading {
+    display: block;
+    color: #6b0b64;
+    font-size: 60px;
+    font-family: Lobster, sans-serif;
+    text-align: center;
+    margin: 50px auto;
+    background: linear-gradient(to bottom, #FF00A7, #78004E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
