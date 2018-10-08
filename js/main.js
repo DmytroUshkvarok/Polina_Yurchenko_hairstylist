@@ -1,15 +1,15 @@
 $(document).ready(function () {
     $(window).scroll(function(){
-        if ($(window).scrollTop() > 100) {
-            $('.about-master__heading').addClass('scrolled');
+        if ($(window).scrollTop() > 60) {
+            $('.about-master__heading-box').addClass('scrolled');
         }
         else {
-            $('.about-master__heading').removeClass('scrolled');
+            $('.about-master__heading-box').removeClass('scrolled');
         }
     });
 
     $(window).scroll(function(){
-        if ($(window).scrollTop() > 450){
+        if ($(window).scrollTop() > 400){
             $('.about-master__textbox').addClass('scrolled');
         }
         else {
@@ -18,29 +18,11 @@ $(document).ready(function () {
     });
 
     $(window).scroll(function(){
-        if ($(window).scrollTop() > 1000) {
-            $('.gallery--tufts, .gallery__name--tufts').addClass('scrolled');
+        if ($(window).scrollTop() > 60){
+            $('.navigation').addClass('scrolled');
         }
         else {
-            $('.gallery--tufts, .gallery__name--tufts').removeClass('scrolled');
-        }
-    });
-
-    $(window).scroll(function(){
-        if ($(window).scrollTop() > 1230) {
-            $('.gallery--curls, .gallery__name--curls').addClass('scrolled');
-        }
-        else {
-            $('.gallery--curls, .gallery__name--curls').removeClass('scrolled');
-        }
-    });
-
-    $(window).scroll(function(){
-        if ($(window).scrollTop() > 1460) {
-            $('.gallery--braids, .gallery__name--braids').addClass('scrolled');
-        }
-        else {
-            $('.gallery--braids, .gallery__name--braids').removeClass('scrolled');
+            $('.navigation').removeClass('scrolled');
         }
     });
 });

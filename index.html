@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
-	<title></title>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+    <meta charset="utf-8" />
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
 
     <link href="./styles/main.css" rel="stylesheet" type="text/css" />
 
@@ -22,7 +22,7 @@
     <!--LightBox-->
 
     <script src="./lightbox2/dist/js/lightbox.min.js"></script>
-    <link rel="stylesheet" href="./lightbox2/dist/css/lightbox.min.css">
+    <link rel="stylesheet" href="./lightbox2/dist/css/lightbox.min.custom.css">
 
     <!--Owl Carousel-->
 
@@ -30,6 +30,14 @@
     <link rel="stylesheet" href="./OwlCarousel2/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="./OwlCarousel2/dist/assets/owl.carousel.min.css">
 
+    <!--ScrollSpy-->
+
+    <script src="./jquery-scrollspy/scrollspy.min.js"></script>
+
+    <!--jBox-->
+
+    <script src="./jBox/Source/jBox.min.js"></script>
+    <link rel="stylesheet" href="./jBox/Source/jBox.css">
 
 </head>
 
@@ -37,14 +45,14 @@
 
 <div class="wrapper">
 
-	<header>
-		<div class="navigation">
+    <header>
+        <div class="navigation" id="navigation">
             <div class="container">
                 <div class="navigation__block">
                     <ul class="navigation__list">
                         <li class="navigation__item"><a href="#about" class="navigation__link">О мастере</a></li>
                         <li class="navigation__item"><a href="#works-gallery" class="navigation__link">Галерея работ</a></li>
-                        <li class="navigation__item"><a href="#studying" class="navigation__link">Обучение</a></li>
+                        <li class="navigation__item"><a href="#courses" class="navigation__link">Обучение</a></li>
                         <li class="navigation__item"><a href="#faq" class="navigation__link">Ответы на вопросы</a></li>
                         <li class="navigation__item"><a href="#feedbacks" class="navigation__link">Отзывы клиентов</a></li>
                         <li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
@@ -56,21 +64,22 @@
         <div class="logo">
             <div class="logo__container"><img src="./images/logo.png" alt="logo" class="logo__image" /></div>
         </div>
-	</header><!-- .header-->
+    </header><!-- .header-->
 
-	<main>
+    <main>
         <section>
             <div id="about" class="about-master">
                 <div class="container">
                     <div class="about-master__block">
-                        <h2 class="about-master__heading">О мастере</h2>
+                        <div class="row">
+                            <div class="about-master__heading-box">
+                                <h2 class="about-master__heading">О мастере</h2>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="about-master__textbox">
                                 <p class="about-master__text">
                                     Aliquam erat volutpat. Integer semper sem nec pretium bibendum. Aliquam suscipit placerat dui a scelerisque. Integer nec nisl vitae augue laoreet vulputate eu nec justo. Integer fringilla nulla quam, euismod viverra sem convallis convallis. Curabitur ullamcorper tristique dolor, et ullamcorper sem suscipit eu. Praesent nibh leo, tempor et ultricies eget, gravida in orci.
-                                </p>
-                                <p class="about-master__text">
-                                    Aliquam erat volutpat. Integer semper sem nec pretium bibendum. Aliquam suscipit placerat dui a scelerisque. Integer nec nisl vitae augue laoreet vulputate eu nec justo.
                                 </p>
                                 <div class="instagram">
                                     <a href="https://www.instagram.com/polina_hairstyles/" class="instagram__link" target="_blank"><img class="instagram__icon" src="./images/instagram.png" alt="insta-link">polina_hairstyles</a>
@@ -84,120 +93,459 @@
 
         <section>
             <div id="works-gallery" class="works-gallery">
-                <div class="container">
-                    <div class="works-gallery__block">
-                        <h2 class="works-gallery__heading">Галерея работ</h2>
-                        <div class="works-gallery__content">
-                            <div class="works-gallery__row">
-                                <div class="gallery gallery--tufts">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name gallery__name--tufts">Пучки</h3>
+                <div class="works-gallery__heading-box">
+                    <h2 class="works-gallery__heading">Галерея работ</h2>
+                </div>
+                <div class="works-gallery__content">
+                    <div class="container">
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
                             </div>
-                            <div class="works-gallery__row">
-                                <div class="gallery gallery--curls">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name gallery__name--curls">Локоны</h3>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Пучки</h3>
                             </div>
-                            <div class="works-gallery__row">
-                                <div class="gallery gallery--braids">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name gallery__name--braids">Косы</h3>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
                             </div>
-                            <!--<div class="works-gallery__row">
-                                <div class="gallery">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name">Хвосты</h3>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Локоны</h3>
                             </div>
-                            <div class="works-gallery__row">
-                                <div class="gallery">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name">Гладкие формы</h3>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
                             </div>
-                            <div class="works-gallery__row">
-                                <div class="gallery">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name">Временные дреды</h3>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Косы</h3>
                             </div>
-                            <div class="works-gallery__row">
-                                <div class="gallery">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name">Греческая прическа</h3>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
                             </div>
-                            <div class="works-gallery__row">
-                                <div class="gallery">
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                    <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
-                                    <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
-                                    <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
-                                    <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
-                                </div>
-                                <h3 class="gallery__name">Афрокудри</h3>
-                            </div>-->
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Хвосты</h3>
+                            </div>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                            </div>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Гладкие формы</h3>
+                            </div>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                            </div>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Временные дреды</h3>
+                            </div>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                            </div>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Греческая прическа</h3>
+                            </div>
+                        </div>
+                        <div class="works-gallery__row">
+                            <div class="works-gallery__gallery">
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                <a href="./images/image_01.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                <a href="./images/image_02.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                <a href="./images/image_03.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                <a href="./images/image_04.jpeg" data-lightbox="tufts"><img class="works-gallery__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                            </div>
+                            <div class="works-gallery__name-box">
+                                <h3 class="works-gallery__name">Афрокудри</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!--<div class="container">
+        <section>
+            <div class="courses" id="courses">
+                <div class="courses__heading-box">
+                    <h2 class="courses__heading">Обучение прическам</h2>
+                </div>
+                <div class="container">
+                    <div class="courses__content">
+
+                        <div class="courses__row">
+                            <div class="courses__description">
+                                <h3 class="courses__name">&laquo;Стилист вечерних и свадебных причесок&raquo;<br />(базовый курс)</h3>
+                                <div class="courses__text-box">
+                                    <p class="courses__text">
+                                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                    </p>
+                                    <button class="courses__button" id="evening-and-wedding-button">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="courses__image-box">
+                                <a href="./images/image_07.jpeg" data-lightbox="program-evening-and-wedding"><img class="courses__image" src="./images/small-image07.jpeg" alt="image07" /></a>
+                            </div>
+                        </div>
+
+                        <div class="courses__row">
+                            <div class="courses__description">
+                                <h3 class="courses__name">&laquo;Трендовые формы подорбанных вечерних причесок&raquo;<br />(экспресс-курс)</h3>
+                                <div class="courses__text-box">
+                                    <p class="courses__text">
+                                        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                                    </p>
+                                    <button class="courses__button" id="tufts-button">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="courses__image-box">
+                                <a href="./images/image_03.jpeg" data-lightbox="program-tufts"><img class="courses__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                            </div>
+                        </div>
+
+                        <div class="courses__row">
+                            <div class="courses__description">
+                                <h3 class="courses__name">&laquo;Трендовые техники накрутки&raquo;<br />(экспресс-курс)</h3>
+                                <div class="courses__text-box">
+                                    <p class="courses__text">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                    </p>
+                                    <button class="courses__button" id="curls-button">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="courses__image-box">
+                                <a href="./images/image_04.jpeg" data-lightbox="program-curls"><img class="courses__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                            </div>
+                        </div>
+
+                        <div class="courses__row">
+                            <div class="courses__description">
+                                <h3 class="courses__name">Курс причесок для себя<br />&laquo;My hairstyle&raquo;</h3>
+                                <div class="courses__text-box">
+                                    <p class="courses__text">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                    </p>
+                                    <button class="courses__button" id="for-myself-button">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="courses__image-box">
+                                <a href="./images/image_02.jpeg" data-lightbox="program-for-myself"><img class="courses__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                            </div>
+                        </div>
+
+                        <div class="courses__row">
+                            <div class="courses__description">
+                                <h3 class="courses__name">Курс причесок<br />&laquo;Мама & Дочка&raquo;</h3>
+                                <div class="courses__text-box">
+                                    <p class="courses__text">
+                                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                    </p>
+                                    <button class="courses__button" id="mother-daughter-button">Подробнее</button>
+                                </div>
+                            </div>
+                            <div class="courses__image-box">
+                                <a href="./images/image_05.jpeg" data-lightbox="program-mother-daughter"><img class="courses__image" src="./images/small-image05.jpeg" alt="image05" /></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--PopUp Windows-->
+
+                <!--PopUp evening-and-wedding-->
+
+                <div class="container">
+                    <div class="program" id="program-evening-and-wedding">
+                        <h3 class="program__heading">&laquo;Стилист вечерних и свадебных причесок&raquo;</h3>
+                        <div class="program__content">
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 1<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_03.jpeg" data-lightbox="program-evening-and-wedding"><img class="program__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                    <a href="./images/image_04.jpeg" data-lightbox="program-evening-and-wedding"><img class="program__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 2<br /></span>Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-evening-and-wedding"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 3<br /></span>Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_01.jpeg" data-lightbox="program-evening-and-wedding"><img class="program__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-evening-and-wedding"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 4<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-evening-and-wedding"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program__duration">Длительность: 6 недель</div>
+                        <div class="program__price">Цена: 4000 грн</div>
+                    </div>
+                </div>
+
+                <!--PopUp TUFTS-->
+
+                <div class="container">
+                    <div class="program" id="program-tufts">
+                        <h3 class="program__heading">&laquo;Трендовые формы подорбанных вечерних причесок&raquo;</h3>
+                        <div class="program__content">
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 1<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_03.jpeg" data-lightbox="program-tufts"><img class="program__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                    <a href="./images/image_04.jpeg" data-lightbox="program-tufts"><img class="program__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 2<br /></span>Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-tufts"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 3<br /></span>Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_01.jpeg" data-lightbox="program-tufts"><img class="program__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-tufts"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 4<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-tufts"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program__duration">Длительность: 3 недели</div>
+                        <div class="program__price">Цена: 2500 грн</div>
+                    </div>
+                </div>
+
+                <!--PopUp CURLS-->
+
+                <div class="container">
+                    <div class="program" id="program-curls">
+                        <h3 class="program__heading">&laquo;Трендовые техники накрутки&raquo;</h3>
+                        <div class="program__content">
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 1<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_03.jpeg" data-lightbox="program-curls"><img class="program__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                    <a href="./images/image_04.jpeg" data-lightbox="program-curls"><img class="program__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 2<br /></span>Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-curls"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 3<br /></span>Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_01.jpeg" data-lightbox="program-curls"><img class="program__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-curls"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 4<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-curls"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program__duration">Длительность: 3 недели</div>
+                        <div class="program__price">Цена: 2500 грн</div>
+                    </div>
+                </div>
+
+                <!--PopUp FOR MYSELF-->
+
+                <div class="container">
+                    <div class="program" id="program-for-myself">
+                        <h3 class="program__heading">Курс причесок для себя &laquo;My hairstyle&raquo;</h3>
+                        <div class="program__content">
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 1<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_03.jpeg" data-lightbox="program-for-myself"><img class="program__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                    <a href="./images/image_04.jpeg" data-lightbox="program-for-myself"><img class="program__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 2<br /></span>Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-for-myself"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 3<br /></span>Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_01.jpeg" data-lightbox="program-for-myself"><img class="program__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-for-myself"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 4<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-for-myself"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program__duration">Длительность: 4 недели</div>
+                        <div class="program__price">Цена: 3000 грн</div>
+                    </div>
+                </div>
+
+                <!--PopUp MOTHER-DAUGHTER-->
+
+                <div class="container">
+                    <div class="program" id="program-mother-daughter">
+                        <h3 class="program__heading">Курс причесок для себя &laquo;My hairstyle&raquo;</h3>
+                        <div class="program__content">
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 1<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_03.jpeg" data-lightbox="program-mother-daughter"><img class="program__image" src="./images/small-image03.jpeg" alt="image03" /></a>
+                                    <a href="./images/image_04.jpeg" data-lightbox="program-mother-daughter"><img class="program__image" src="./images/small-image04.jpeg" alt="image04" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 2<br /></span>Aliquam aliquet viverra malesuada. Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-mother-daughter"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 3<br /></span>Sed et velit libero. Praesent a auctor mauris. Pellentesque turpis mauris, egestas ut massa eu, egestas aliquet erat. In tempus condimentum lorem, eget viverra mi dictum ullamcorper.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_01.jpeg" data-lightbox="program-mother-daughter"><img class="program__image" src="./images/small-image01.jpeg" alt="image01" /></a>
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-mother-daughter"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                            <div class="program__row">
+                                <p class="program__text">
+                                    <span class="program__lesson-number">Занятие 4<br /></span>Phasellus vel maximus felis. Integer volutpat ornare sem, non pharetra ex luctus et. Aliquam aliquet viverra malesuada. Sed et velit libero.
+                                </p>
+                                <div class="program__image-box">
+                                    <a href="./images/image_02.jpeg" data-lightbox="program-mother-daughter"><img class="program__image" src="./images/small-image02.jpeg" alt="image02" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program__duration">Длительность: 3 недели</div>
+                        <div class="program__price">Цена: 2000 грн</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
                 <div class="row">
                     <div class="owl-carousel">
                         <img src="./images/small-image01.jpeg" alt="image_01" />
@@ -210,20 +558,21 @@
                         <img src="./images/small-image08.jpeg" alt="image_08" />
                     </div>
                 </div>
-            </div>-->
+            </div>
         </section>
 
-	</main><!-- .content -->
 
-	<footer>
+    </main><!-- .content -->
 
-	</footer><!-- .footer -->
+    <footer>
+
+    </footer><!-- .footer -->
 
 </div><!-- .wrapper -->
 
 </body>
 
-                        <!--Scripts-->
+<!--Scripts-->
 
 
 <!--LightBox-->
@@ -250,8 +599,44 @@
     });
 </script>
 
+<!--ScrollSpy-->
 
+<script>
+    $(document).ready(function(){
+        $("#navigation").scrollspy({
+            activeClass: 'navigation__item--active'
+        });
+    })
+</script>
 
+<!--jBox-->
+
+<script>
+    new jBox('Modal', {
+        attach: '#evening-and-wedding-button',
+        content: $('#program-evening-and-wedding')
+    });
+
+    new jBox('Modal', {
+        attach: '#tufts-button',
+        content: $('#program-tufts')
+    });
+
+    new jBox('Modal', {
+        attach: '#curls-button',
+        content: $('#program-curls')
+    });
+
+    new jBox('Modal', {
+        attach: '#for-myself-button',
+        content: $('#program-for-myself')
+    });
+
+    new jBox('Modal', {
+        attach: '#mother-daughter-button',
+        content: $('#program-mother-daughter')
+    });
+</script>
 </html>
 
 

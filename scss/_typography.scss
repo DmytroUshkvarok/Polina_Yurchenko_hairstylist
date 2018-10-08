@@ -18,3 +18,10 @@
     font-weight: 500;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'ArkonaC';
+    src: local('ArkonaC'), url('../fonts/ArkonaC/ArkonaC.ttf') format('truetype'), url('../fonts/ArkonaC/ArkonaC.woff') format('woff'), url('../fonts/ArkonaC/ArkonaC.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

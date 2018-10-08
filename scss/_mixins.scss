@@ -1,11 +1,88 @@
-@mixin heading {
-    display: block;
+@mixin heading2 {
+    display: inline-block;
     color: #6b0b64;
-    font-size: 60px;
-    font-family: Lobster, sans-serif;
-    text-align: center;
+    font-size: 70px;
+    font-family: $headingFont;
     margin: 50px auto;
-    background: linear-gradient(to bottom, #FF00A7, #78004E);
+    background: linear-gradient(to bottom, #FF00A7, #78004e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    padding: 0 30px;
+
+    &::before {
+        content: '';
+        display: block;
+        background: url("../images/headings_decor_left.png") transparent no-repeat left center;
+        width: 250px;
+        height: 59px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        @include translate(-100%, -50%);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        background: url("../images/headings_decor_right.png") transparent no-repeat right center;
+        width: 250px;
+        height: 59px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+
+        @include translate(100%, -50%);
+    }
+}
+
+@mixin heading3() {
+    color: #6b0b64;
+    font-size: 55px;
+    font-family: $headingFont;
+    background: linear-gradient(to bottom, #78004e, #ff00a7);
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    //position: relative;
+
+    /*&::before {
+        content: '';
+        display: block;
+        background: url("../images/gallery_headings_decore.png") transparent no-repeat center center;
+        width: 100%;
+        height: 31px;
+        position: absolute;
+        top: -100%;
+        @include rotate(180deg);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        background: url("../images/gallery_headings_decore.png") transparent no-repeat center center;
+        width: 100%;
+        height: 31px;
+        position: absolute;
+        bottom: -100%;
+    }*/
+}
+
+@mixin heading4() {
+    color: #6b0b64;
+    font-size: 28px;
+    font-family: $headingFont;
+}
+
+@mixin ellipsis ($lines: 1, $line-height: 24px) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: $line-height * $lines;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    -moz-line-clamp: $lines;
 }
