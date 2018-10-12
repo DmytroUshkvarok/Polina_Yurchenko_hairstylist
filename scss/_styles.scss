@@ -1,11 +1,6 @@
 .wrapper {
     min-width: 320px;
-    max-width: 2000px;
-    margin: 0 auto;
-}
-
-html, body {
-    max-width: 2000px;
+    max-width: 1760px;
     margin: 0 auto;
 }
 
@@ -14,8 +9,8 @@ html, body {
 }
 
 
-/* Header
------------------------------------------------------------------------------*/
+//  HEADER
+
 .navigation {
     height: 60px;
     background-color: rgb(162, 4, 137);
@@ -135,9 +130,10 @@ html, body {
 //  ABOUT MASTER SECTION
 
 .about-master {
-    background: url(../images/about-master.jpg) no-repeat center bottom;
-    background-size: contain;
-    min-height: 1000px;
+    background: url(../images/about-master.jpg) no-repeat;
+    background-position: -230px 0;
+    background-size: cover;
+    height: 1555px;
 
     &__block {
         padding-bottom: 50px;
@@ -160,19 +156,19 @@ html, body {
         @include heading2();
 
         &::after {
-            //width: 73px;
-            background-image: url(../images/headings_decor_right_short.png);
+            /*background-image: url(../images/headings_decor_right_short.png);
             background-position: 0 0;
+            width: 87px;
+            height: 60px;
+            background: url('../images/main_sprite.png') -680px -549px;*/
+            @include pseudo-sprite(87px, 60px, -10px, -590px);
         }
     }
 
     &__textbox {
         @include make-lg-column(8);
         @include make-lg-column-pull(8);
-
-        //border-radius: 40px;
-        //background-color: rgba(47, 18, 7, 0.7);
-        background: url(../images/about_master_textbox.png) no-repeat center center/* rgba(47, 18, 7, 0.7)*/;
+        background: url(../images/about_master_textbox.png) no-repeat center center;
         margin: 200px 0 0;
         padding: 170px 210px;
         height: 760px;
@@ -195,9 +191,31 @@ html, body {
         text-align: justify;
         @include ellipsis(10, 34px);
     }
+
+    &__instagram {
+        display: block;
+        text-decoration: none;
+        font-size: 30px;
+        font-family: $mainFont;
+        font-style: italic;
+        color: #fff;
+        margin: 25px 0 20px 60px;
+        position: relative;
+
+        &:hover, &:visited, &:focus, &:active {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        &::before {
+            @include pseudo-sprite(50px, 50px, -550px, -511px);
+            position: absolute;
+            left: -60px;
+        }
+    }
 }
 
-.instagram {
+/*.instagram {
     text-align: center;
     height: 50px;
     margin: 30px 0 20px;
@@ -205,6 +223,7 @@ html, body {
     &__icon {
         width: 50px;
         height: 50px;
+        background: url('../images/main_sprite.png') -550px -511px;
         margin: 0 5px;
     }
 
@@ -220,13 +239,14 @@ html, body {
             color: #fff;
         }
     }
-}
+}*/
 
 
 
 //  WORKS GALLERY SECTION
 
 .works-gallery {
+    background-color: $mainBackgroundColor;
 
     &__heading-box {
         @include make-lg-column(12);
@@ -254,16 +274,16 @@ html, body {
         &:nth-child(odd) {
 
             &::after {
-                content: '';
-                display: block;
-                background: url("../images/gallery_separator_grad2_2.png") transparent no-repeat center center;
+                //content: '';
+                //display: block;
+                //background: url("../images/gallery_separator_grad2_2.png") transparent no-repeat center center;
+                @include pseudo-sprite(720px, 40px, -10px, -397px);
                 position: absolute;
-                width: 700px;
-                height: 85px;
-                top: 100%;
-                background-size: contain;
+                //width: 700px;
+                //height: 85px;
+                top: 109%;
+                //background-size: contain;
                 left: 50%;
-
                 @include translate(-50%,0);
             }
         }
@@ -272,14 +292,15 @@ html, body {
             flex-direction: row-reverse;
 
             &::after {
-                content: '';
-                display: block;
-                background: url("../images/gallery_separator_grad1_1.png") transparent no-repeat center center;
+                //content: '';
+                //display: block;
+                //background: url("../images/gallery_separator_grad1_1.png") transparent no-repeat center center;
+                @include pseudo-sprite(720px, 34px, -10px, -457px);
                 position: absolute;
-                width: 700px;
-                height: 85px;
-                top: 100%;
-                background-size: contain;
+                //width: 700px;
+                //height: 85px;
+                top: 110%;
+                //background-size: contain;
                 left: 50%;
 
                 @include translate(-50%,0);
@@ -324,9 +345,10 @@ html, body {
 }
 
 
-// COURSES
+//  COURSES
 
 .courses {
+    background-color: $mainBackgroundColor;
 
     &__heading-box {
         text-align: center;
@@ -404,27 +426,28 @@ html, body {
         }
 
         &::before {
-            content: '';
-            display: block;
-            background: url("../images/button_decor_left.png") transparent no-repeat left center;
-            width: 170px;
-            height: 36px;
+            //content: '';
+            //display: block;
+            //background: url("../images/button_decor_left.png") transparent no-repeat left center;
+            //width: 170px;
+            //height: 36px;
+            @include pseudo-sprite(150px, 36px, -830px, -316px);
             position: absolute;
-            left: 0;
+            left: -20px;
             top: 50%;
             @include translate(-100%, -50%);
         }
 
         &::after {
-            content: '';
-            display: block;
-            background: url("../images/button_decor_right.png") transparent no-repeat right center;
-            width: 170px;
-            height: 36px;
+            //content: '';
+            //display: block;
+            //background: url("../images/button_decor_right.png") transparent no-repeat right center;
+            //width: 170px;
+            //height: 36px;
+            @include pseudo-sprite(150px, 36px, -830px, -260px);
             position: absolute;
-            right: 0;
+            right: -20px;
             top: 50%;
-
             @include translate(100%, -50%);
         }
     }
@@ -445,22 +468,23 @@ html, body {
 
 .program {
     display: none;
-    background-color: rgba(255, 0, 167, 0.03);
+    background-color: $mainBackgroundColor;
     padding-bottom: 100px;
 
     &__heading {
         @include  heading3();
         font-size: 40px;
         margin: 0;
-        padding: 92px 0;
+        padding: 122px 0 80px;
         position: relative;
 
         &::before {
-            content: '';
-            display: block;
-            background: url("../images/popup_heading_decor2.png") no-repeat;
-            width: 1022px;
-            height: 170px;
+            //content: '';
+            //display: block;
+            //background: url("../images/popup_heading_decor2.png") no-repeat;
+            //width: 1022px;
+            //height: 170px;
+            @include pseudo-sprite(1000px, 230px, -10px, -10px);
             position: absolute;
             top: 30px;
             left: 0;
@@ -469,10 +493,6 @@ html, body {
 
     &__content {
         padding: 40px 100px;
-
-        ::-webkit-scrollbar{
-            width:12px;
-        }
     }
 
     &__row {
@@ -496,7 +516,6 @@ html, body {
         line-height: 23px;
         text-align: justify;
         color: #6b0b64;
-        //padding-top: 60px;
     }
 
     &__lesson-number {
@@ -526,19 +545,20 @@ html, body {
         font-family: $mainFont;
         text-align: center;
         color: #6b0b64;
-        margin: 70px 0 20px;
+        margin: 110px 0 20px;
         position: relative;
 
         &::before {
-            content: '';
-            display: block;
+            //content: '';
+            //display: block;
+            @include pseudo-sprite(800px, 117px, -10px, -260px);
             position: absolute;
-            background: transparent url("../images/popup_separator.png") no-repeat center center;
-            -webkit-background-size: contain;
-            background-size: contain;
-            width: 700px;
-            height: 100px;
-            top: -140px;
+            //background: transparent url("../images/popup_separator.png") no-repeat center center;
+            //-webkit-background-size: contain;
+            //background-size: contain;
+            //width: 700px;
+            //height: 100px;
+            top: -160px;
             left: 50%;
             @include translate(-50%, 0);
 
@@ -554,13 +574,310 @@ html, body {
     }
 }
 
-// LIGHTBOX
+//  FEEDBACKS
 
+.feedbacks {
+    background-color: $mainBackgroundColor;
 
+    &__heading-box {
+        text-align: center;
+    }
+
+    &__heading {
+        @include heading2();
+    }
+
+    &__content-box {
+        margin: 30px 10px 10px;
+        text-align: center;
+        background-color: rgba(255, 0, 167, 0.1);
+        padding: 20px;
+        border-radius: 25px;
+        box-shadow: 0 0 18px #ff00a7;
+    }
+
+    &__text {
+        font-family: $mainFont;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 700;
+        letter-spacing: .4px;
+        color: #6b0b64;
+    }
+}
+
+//  FAQ
+
+.faq {
+    background-color: $mainBackgroundColor;
+
+    &__heading-box {
+        text-align: center;
+    }
+
+    &__heading {
+        @include heading2();
+    }
+
+    &__content {
+        @include make-lg-column(10);
+        @include make-lg-column-push(1);
+        background-color: rgba(255, 0, 167, 0.05);
+        padding: 40px 70px 25px;
+        border-radius: 25px;
+    }
+
+    &__block {
+        font-family: $mainFont;
+        font-size: 17px;
+        text-align: justify;
+    }
+
+    &__question-box {
+        margin-bottom: 10px;
+        color: #6b0b64;
+
+    }
+
+    &__question {
+
+        &:hover {
+            color: #ff00a7;
+            cursor: pointer;
+        }
+    }
+
+    &__answer-box {
+        display: none;
+        padding-left: 30px;
+    }
+
+    &__answer {
+        color: #6b0b64;
+        font-style: italic;
+    }
+
+    &__button {
+        display: none;
+
+        &:checked ~ .faq__answer-box {
+            display: block;
+            margin: 10px 0 15px;
+        }
+
+        &:checked + .faq__question-box {
+            color: #ff00a7;
+            -webkit-box-shadow: inset 0 -1px 0 0 #ff00a7;
+            -moz-box-shadow: inset 0 -1px 0 0 #ff00a7;
+            box-shadow: inset 0 -2px 0 0 #ff00a7;
+        }
+    }
+}
+
+// CONTACTS
+
+.contacts {
+    background-color: $mainBackgroundColor;
+    padding-bottom: 50px;
+
+    &__heading-box {
+        text-align: center;
+    }
+
+    &__heading {
+        @include heading2();
+    }
+
+    &__content {
+        @include make-lg-column(6);
+        @include make-lg-column-offset(1);
+    }
+
+    &__type {
+        @include make-lg-column(3);
+        @include make-lg-column-offset(1);
+        text-align: right;
+        font-family: $mainFont;
+        font-size: 20px;
+        color: #6b0b64;
+        font-weight: 700;
+    }
+
+    &__item {
+        @include make-lg-column(7);
+        @include make-lg-column-push(1);
+        font-family: $mainFont;
+        font-size: 20px;
+        color: #6b0b64;
+        font-weight: 700;
+        margin-bottom: 25px;
+
+        &--phone {
+            @include contacts-sprite(-750px, -397px);
+        }
+
+        &--instagram {
+            @include contacts-sprite(-958px, -397px);
+        }
+
+        &--viber {
+            @include contacts-sprite(-906px, -397px);
+        }
+
+        &--telegram {
+            @include contacts-sprite(-854px, -397px);
+        }
+
+        &--address {
+            @include contacts-sprite(-802px, -397px);
+        }
+    }
+
+    &__link {
+        font-family: $mainFont;
+        font-size: 20px;
+        color: #6b0b64;
+        font-weight: 700;
+
+        &:hover, &:active, &:visited, &:focus {
+            color: #6b0b64;
+            text-decoration: none;
+        }
+    }
+
+    &__map-box {
+        @include make-lg-column(4);
+    }
+}
 
 /* Footer
 -----------------------------------------------------------------------------*/
 
+.footer {
+    background-color: #6b0b64;
+
+    &__wrapper {
+        @include make-lg-column(10);
+        @include make-lg-column-push(1);
+    }
+}
+
+.down-navigation {
+    @include make-lg-column(3);
+    margin: 20px auto;
+    padding-left: 0;
+
+    &--courses {
+        @include make-lg-column(6);
+
+        & .down-navigation__item {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            font-family: $mainFont;
+            border-left: 2px solid transparent;
+            padding-left: 10px;
+            margin-bottom: 4px;
+
+            &:hover, &:active {
+                cursor: pointer;
+                text-decoration: underline;
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+    }
+
+    &--contacts {
+        @include make-lg-column(3);
+
+        & .down-navigation__list {
+            box-shadow: none;
+        }
+
+        & .down-navigation__item {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            font-family: $mainFont;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            border-left: none;
+            position: relative;
+
+            &--phone {
+                @include contacts-sprite-down(-750px, -439px);
+            }
+
+            &--instagram {
+                @include contacts-sprite-down(-958px, -439px);
+            }
+
+            &--viber {
+                @include contacts-sprite-down(-906px, -439px);
+            }
+
+            &--telegram {
+                @include contacts-sprite-down(-854px, -439px);
+            }
+        }
+
+        & .down-navigation__link {
+            padding: 0;
+            margin: 0;
+            border-left: none;
+        }
+    }
+
+    &__name {
+        display: block;
+        font-size: 17px;
+        margin-bottom: 15px;
+        font-family: $mainFont;
+        color: #fff;
+        border-bottom: 2px dotted #fff;
+        padding-bottom: 5px;
+        letter-spacing: .7px;
+    }
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0;
+        box-shadow: inset 2px 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-family: $mainFont;
+        border-left: 2px solid transparent;
+        padding-left: 10px;
+        margin-bottom: 4px;
+
+        &:hover, &:active {
+            text-decoration: underline;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        &:focus {
+            text-decoration: underline;
+            color: #fff;
+            border-color: #fff;
+            outline: none;
+        }
+    }
+}
 
 /* Scrollbar */
 

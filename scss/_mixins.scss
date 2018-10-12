@@ -1,3 +1,11 @@
+@mixin pseudo-sprite ($width, $height, $x, $y) {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+    background: url("../images/main_sprite.png") $x $y;
+}
+
 @mixin heading2 {
     display: inline-block;
     color: #6b0b64;
@@ -11,11 +19,15 @@
     padding: 0 30px;
 
     &::before {
-        content: '';
-        display: block;
-        background: url("../images/headings_decor_left.png") transparent no-repeat left center;
+        //content: '';
+        //display: block;
+        /*background: url("../images/headings_decor_left.png") transparent no-repeat left center;
         width: 250px;
-        height: 59px;
+        height: 59px;*/
+        //width: 250px;
+        //height: 59px;
+        //background: url('../images/main_sprite.png') -950px -470px;
+        @include pseudo-sprite(250px, 59px, -10px, -511px);
         position: absolute;
         left: 0;
         top: 50%;
@@ -23,11 +35,15 @@
     }
 
     &::after {
-        content: '';
-        display: block;
-        background: url("../images/headings_decor_right.png") transparent no-repeat right center;
+        //content: '';
+        //display: block;
+        /*background: url("../images/headings_decor_right.png") transparent no-repeat right center;
         width: 250px;
-        height: 59px;
+        height: 59px;*/
+        //width: 250px;
+        //height: 59px;
+        //background: url('../images/main_sprite.png') -680px -470px;
+        @include pseudo-sprite(250px, 59px, -280px, -511px);
         position: absolute;
         right: 0;
         top: 50%;
@@ -85,4 +101,29 @@
     -moz-box-orient: vertical;
     -webkit-line-clamp: $lines;
     -moz-line-clamp: $lines;
+}
+
+@mixin contacts-sprite ($x, $y) {
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -40px;
+        width: 32px;
+        height: 32px;
+        border-radius: 5px;
+        background: url("../images/main_sprite.png") $x $y;
+    }
+}
+
+@mixin contacts-sprite-down ($x, $y) {
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background: url("../images/main_sprite.png") $x $y;
+    }
 }
