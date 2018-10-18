@@ -20,8 +20,19 @@
     width: 100%;
     z-index: 999;
     box-shadow: 0 3px 3px 0 rgb(162, 4, 137), inset 0 4px 0 0 #57014c;
-
     transition: all 1500ms;
+
+    @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        height: 50px;
+    }
+
+    @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        display: none;
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+        display: none;
+    }
 
     &.scrolled {
         background-color: rgba(162, 4, 137, 0.5);
@@ -30,7 +41,7 @@
 
         & .navigation__link {
             color: #57014c;
-            
+
             &:hover {
                 color: #fff;
             }
@@ -44,7 +55,7 @@
     }
 
     &__block {
-        @include make-lg-column(12);
+        @include make-md-column(12);
         margin: 0 auto;
     }
 
@@ -57,7 +68,6 @@
         width: 100%;
         height: 60px;
         margin: 0;
-
     }
 
     &__item {
@@ -86,8 +96,12 @@
         font-family: $headingFont;
         border-top: 4px solid transparent;
         padding: 4px 8px 0;
-
         transition: all 100ms cubic-bezier(0.4, 0, 1, 1);
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 25px;
+            height: 50px;
+        }
 
         &:hover, &:active {
             text-decoration: none;
@@ -101,13 +115,16 @@
             color: #ffddf5;
             outline: none;
         }
-
     }
 }
 
 .logo {
     margin: 200px auto 100px;
     overflow: visible;
+
+    @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        margin-bottom: 200px;
+    }
 
     &__container {
         text-align: center;
@@ -130,10 +147,19 @@
 //  ABOUT MASTER SECTION
 
 .about-master {
-    background: url(../images/about-master.jpg) no-repeat;
+    background: url(../images/about-master.jpg) no-repeat top;
     background-position: -230px 0;
     background-size: cover;
     height: 1555px;
+
+    @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        background-position: -210px 0;
+        height: 1200px;
+    }
+
+    @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        background-position: -210px 150px;
+    }
 
     &__block {
         padding-bottom: 50px;
@@ -141,14 +167,14 @@
     }
 
     &__heading-box {
-        @include make-lg-column-push(14);
-        @include make-lg-column(6);
+        @include make-md-column-push(14);
+        @include make-md-column(6);
 
         text-align: center;
         transition: all 500ms cubic-bezier(0.4, 0, 1, 1);
 
         &.scrolled {
-            @include make-lg-column-push(6);
+            @include make-md-column-push(6);
         }
     }
 
@@ -156,40 +182,55 @@
         @include heading2();
 
         &::after {
-            /*background-image: url(../images/headings_decor_right_short.png);
-            background-position: 0 0;
-            width: 87px;
-            height: 60px;
-            background: url('../images/main_sprite.png') -680px -549px;*/
             @include pseudo-sprite(87px, 60px, -10px, -590px);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include pseudo-sprite(226px, 55px, -10px, -1192px);
+            }
+
+            @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                display: none;
+            }
         }
     }
 
     &__textbox {
-        @include make-lg-column(8);
-        @include make-lg-column-pull(8);
+        @include make-md-column(8);
+        @include make-md-column-pull(8);
         background: url(../images/about_master_textbox.png) no-repeat center center;
         margin: 200px 0 0;
         padding: 170px 210px;
         height: 760px;
         background-size: contain;
-
         transition: all 500ms cubic-bezier(0.4, 0, 1, 1);
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            padding: 190px 160px;
+        }
+
+        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            margin-top: 450px;
+        }
 
 
         &.scrolled {
-            @include make-lg-column-pull(-4);
+            @include make-md-column-pull(-4);
         }
 
     }
 
     &__text {
+        line-height: 34px;
         font-family: $mainFont;
         font-size: 24px;
-        line-height: 34px;
         color: #fff;
         text-align: justify;
         @include ellipsis(10, 34px);
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 22px;
+            line-height: 30px;
+        }
     }
 
     &__instagram {
@@ -202,6 +243,10 @@
         margin: 25px 0 20px 60px;
         position: relative;
 
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 26px;
+        }
+
         &:hover, &:visited, &:focus, &:active {
             text-decoration: none;
             color: #fff;
@@ -211,37 +256,14 @@
             @include pseudo-sprite(50px, 50px, -550px, -511px);
             position: absolute;
             left: -60px;
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include pseudo-sprite(45px, 45px, -496px, -1121px);
+                left: -50px;
+            }
         }
     }
 }
-
-/*.instagram {
-    text-align: center;
-    height: 50px;
-    margin: 30px 0 20px;
-
-    &__icon {
-        width: 50px;
-        height: 50px;
-        background: url('../images/main_sprite.png') -550px -511px;
-        margin: 0 5px;
-    }
-
-    &__link {
-        text-decoration: none;
-        font-size: 30px;
-        font-family: $mainFont;
-        font-style: italic;
-        color: #fff;
-        
-        &:hover, &:visited, &:focus, &:active {
-            text-decoration: none;
-            color: #fff;
-        }
-    }
-}*/
-
-
 
 //  WORKS GALLERY SECTION
 
@@ -249,7 +271,7 @@
     background-color: $mainBackgroundColor;
 
     &__heading-box {
-        @include make-lg-column(12);
+        @include make-md-column(12);
         text-align: center;
     }
 
@@ -271,20 +293,27 @@
         margin: 80px 0;
         position: relative;
 
+        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            flex-wrap: wrap;
+            margin-top: 110px;
+        }
+
         &:nth-child(odd) {
 
             &::after {
-                //content: '';
-                //display: block;
-                //background: url("../images/gallery_separator_grad2_2.png") transparent no-repeat center center;
                 @include pseudo-sprite(720px, 40px, -10px, -397px);
                 position: absolute;
-                //width: 700px;
-                //height: 85px;
                 top: 109%;
-                //background-size: contain;
                 left: 50%;
                 @include translate(-50%,0);
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    @include pseudo-sprite(649px, 36px, -10px, -1018px);
+                }
+
+                @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                    top: 105%;
+                }
             }
         }
 
@@ -292,27 +321,36 @@
             flex-direction: row-reverse;
 
             &::after {
-                //content: '';
-                //display: block;
-                //background: url("../images/gallery_separator_grad1_1.png") transparent no-repeat center center;
                 @include pseudo-sprite(720px, 34px, -10px, -457px);
                 position: absolute;
-                //width: 700px;
-                //height: 85px;
                 top: 110%;
-                //background-size: contain;
                 left: 50%;
-
                 @include translate(-50%,0);
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    @include pseudo-sprite(649px, 31px, -10px, -1072px);
+                }
+
+                @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                    top: 105%;
+                }
             }
         }
 
         &:first-child {
             margin-top: 20px;
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                margin-top: 10px;
+            }
         }
 
         &:last-child  {
             margin-bottom: 20px;
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                margin-bottom: 10px;
+            }
 
             &::after {
                 display: none;
@@ -321,14 +359,24 @@
     }
 
     &__gallery {
-        @include make-lg-column(8);
+        @include make-sm-column(12);
+        @include make-md-column(8);
         max-height: 230px;
         overflow: hidden;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            max-height: 195px;
+        }
+
+        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            max-height: 460px;
+        }
 
     }
 
     &__image {
-        @include make-lg-column(3);
+        @include make-sm-column(6);
+        @include make-md-column(3);
         margin: 15px 0;
         -webkit-filter: drop-shadow(0 0 4px #904777);
         filter: drop-shadow(0 0 4px #904777);
@@ -336,7 +384,8 @@
     }
 
     &__name-box {
-        @include make-lg-column(4);
+        @include make-sm-column(12);
+        @include make-md-column(4);
     }
 
     &__name {
@@ -359,7 +408,8 @@
     }
 
     &__content {
-
+        @include make-md-column(10);
+        @include make-md-column-push(1);
     }
 
     &__row {
@@ -374,12 +424,16 @@
     }
 
     &__description {
-        @include make-lg-column(6);
+        @include make-md-column(7);
     }
 
     &__name {
         @include heading3();
         font-size: 40px;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 34px;
+        }
     }
 
     &__text-box {
@@ -388,15 +442,24 @@
         padding: 35px;
         background-color: rgba(255, 0, 167, 0.05);
         border-radius: 25px;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            padding: 25px;
+        }
     }
 
     &__text {
+        line-height: 22px;
         @include ellipsis(7, 22px);
         font-family: $mainFont;
         font-size: 17px;
-        line-height: 22px;
         color: #6b0b64;
         text-align: justify;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 15px;
+            line-height: 19.8px;
+        }
     }
 
     &__button {
@@ -410,8 +473,11 @@
         border: transparent;
         border-radius: 5px;
         box-shadow: 0 0 10px #6b0b64;
-
         transition: all 100ms;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            margin-top: 25px;
+        }
 
         &:focus, &:active {
             border: 1px solid #6b0b64;
@@ -426,34 +492,34 @@
         }
 
         &::before {
-            //content: '';
-            //display: block;
-            //background: url("../images/button_decor_left.png") transparent no-repeat left center;
-            //width: 170px;
-            //height: 36px;
             @include pseudo-sprite(150px, 36px, -830px, -316px);
             position: absolute;
             left: -20px;
             top: 50%;
             @include translate(-100%, -50%);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include pseudo-sprite(110px, 27px, -748px, -935px);
+                left: -10px;
+            }
         }
 
         &::after {
-            //content: '';
-            //display: block;
-            //background: url("../images/button_decor_right.png") transparent no-repeat right center;
-            //width: 170px;
-            //height: 36px;
             @include pseudo-sprite(150px, 36px, -830px, -260px);
             position: absolute;
             right: -20px;
             top: 50%;
             @include translate(100%, -50%);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include pseudo-sprite(110px, 27px, -748px, -895px);
+                right: -10px;
+            }
         }
     }
 
     &__image-box {
-        @include make-lg-column(4);
+        @include make-md-column(5);
         margin-bottom: 50px;
     }
 
@@ -478,16 +544,20 @@
         padding: 122px 0 80px;
         position: relative;
 
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            padding: 110px 0 70px;
+        }
+
         &::before {
-            //content: '';
-            //display: block;
-            //background: url("../images/popup_heading_decor2.png") no-repeat;
-            //width: 1022px;
-            //height: 170px;
             @include pseudo-sprite(1000px, 230px, -10px, -10px);
             position: absolute;
             top: 30px;
-            left: 0;
+            left: 50%;
+            @include translate(-50%, 0);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include pseudo-sprite(900px, 207px, -10px, -670px);
+            }
         }
     }
 
@@ -510,7 +580,7 @@
     }
 
     &__text {
-        @include make-lg-column(9);
+        @include make-md-column(9);
         font-family: $mainFont;
         font-size: 17px;
         line-height: 23px;
@@ -527,7 +597,7 @@
     }
 
     &__image-box {
-        @include make-lg-column(3);
+        @include make-md-column(3);
         max-height: 250px;
         padding-top: 10px;
         overflow: hidden;
@@ -548,20 +618,21 @@
         margin: 110px 0 20px;
         position: relative;
 
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            margin-top: 90px;
+        }
+
         &::before {
-            //content: '';
-            //display: block;
             @include pseudo-sprite(800px, 117px, -10px, -260px);
             position: absolute;
-            //background: transparent url("../images/popup_separator.png") no-repeat center center;
-            //-webkit-background-size: contain;
-            //background-size: contain;
-            //width: 700px;
-            //height: 100px;
             top: -160px;
             left: 50%;
             @include translate(-50%, 0);
 
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include pseudo-sprite(720px, 105px, -10px, -895px);
+                top: -150px;
+            }
         }
     }
 
@@ -603,6 +674,10 @@
         font-weight: 700;
         letter-spacing: .4px;
         color: #6b0b64;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 18px;
+        }
     }
 }
 
@@ -620,26 +695,26 @@
     }
 
     &__content {
-        @include make-lg-column(10);
-        @include make-lg-column-push(1);
+        @include make-md-column(10);
+        @include make-md-column-push(1);
         background-color: rgba(255, 0, 167, 0.05);
         padding: 40px 70px 25px;
         border-radius: 25px;
-    }
 
-    &__block {
-        font-family: $mainFont;
-        font-size: 17px;
-        text-align: justify;
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            padding: 35px 55px 20px;
+        }
     }
 
     &__question-box {
         margin-bottom: 10px;
-        color: #6b0b64;
-
     }
 
     &__question {
+        font-family: $mainFont;
+        font-size: 17px;
+        text-align: justify;
+        color: #6b0b64;
 
         &:hover {
             color: #ff00a7;
@@ -650,11 +725,14 @@
     &__answer-box {
         display: none;
         padding-left: 30px;
+        text-align: justify;
     }
 
     &__answer {
         color: #6b0b64;
         font-style: italic;
+        font-family: $mainFont;
+        font-size: 17px;
     }
 
     &__button {
@@ -689,55 +767,66 @@
     }
 
     &__content {
-        @include make-lg-column(6);
-        @include make-lg-column-offset(1);
+        @include make-md-column(6);
+        @include make-md-column-offset(1);
     }
 
     &__type {
-        @include make-lg-column(3);
-        @include make-lg-column-offset(1);
+        @include make-md-column(3);
+        @include make-md-column-offset(1);
         text-align: right;
-        font-family: $mainFont;
-        font-size: 20px;
-        color: #6b0b64;
-        font-weight: 700;
+        @include contacts-font();
     }
 
     &__item {
-        @include make-lg-column(7);
-        @include make-lg-column-push(1);
-        font-family: $mainFont;
-        font-size: 20px;
-        color: #6b0b64;
-        font-weight: 700;
+        @include make-md-column(7);
+        @include make-md-column-push(1);
+        @include contacts-font();
         margin-bottom: 25px;
 
         &--phone {
             @include contacts-sprite(-750px, -397px);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include contacts-sprite( -676px, -1018px);
+            }
         }
 
         &--instagram {
             @include contacts-sprite(-958px, -397px);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include contacts-sprite( -863px, -1018px);
+            }
         }
 
         &--viber {
             @include contacts-sprite(-906px, -397px);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include contacts-sprite( -816px, -1018px);
+            }
         }
 
         &--telegram {
             @include contacts-sprite(-854px, -397px);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include contacts-sprite( -769px, -1018px);
+            }
         }
 
         &--address {
             @include contacts-sprite(-802px, -397px);
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                @include contacts-sprite( -722px, -1018px);
+            }
         }
     }
 
     &__link {
-        font-family: $mainFont;
-        font-size: 20px;
-        color: #6b0b64;
-        font-weight: 700;
+        @include contacts-font();
 
         &:hover, &:active, &:visited, &:focus {
             color: #6b0b64;
@@ -746,7 +835,7 @@
     }
 
     &__map-box {
-        @include make-lg-column(4);
+        @include make-md-column(4);
     }
 }
 
@@ -757,18 +846,18 @@
     background-color: #6b0b64;
 
     &__wrapper {
-        @include make-lg-column(10);
-        @include make-lg-column-push(1);
+        @include make-md-column(10);
+        @include make-md-column-push(1);
     }
 }
 
 .down-navigation {
-    @include make-lg-column(3);
+    @include make-md-column(3);
     margin: 20px auto;
     padding-left: 0;
 
     &--courses {
-        @include make-lg-column(6);
+        @include make-md-column(6);
 
         & .down-navigation__item {
             display: block;
@@ -778,6 +867,10 @@
             border-left: 2px solid transparent;
             padding-left: 10px;
             margin-bottom: 4px;
+
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                font-size: 15px;
+            }
 
             &:hover, &:active {
                 cursor: pointer;
@@ -789,7 +882,7 @@
     }
 
     &--contacts {
-        @include make-lg-column(3);
+        @include make-md-column(3);
 
         & .down-navigation__list {
             box-shadow: none;
@@ -805,20 +898,41 @@
             border-left: none;
             position: relative;
 
+            @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                font-size: 15px;
+                padding-left: 30px;
+            }
+
             &--phone {
                 @include contacts-sprite-down(-750px, -439px);
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    @include contacts-sprite-down(-676px, -1056px);
+                }
             }
 
             &--instagram {
                 @include contacts-sprite-down(-958px, -439px);
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    @include contacts-sprite-down(-863px, -1056px);
+                }
             }
 
             &--viber {
                 @include contacts-sprite-down(-906px, -439px);
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    @include contacts-sprite-down(-816px, -1056px);
+                }
             }
 
             &--telegram {
                 @include contacts-sprite-down(-854px, -439px);
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    @include contacts-sprite-down(-770px, -1056px);
+                }
             }
         }
 
@@ -838,6 +952,10 @@
         border-bottom: 2px dotted #fff;
         padding-bottom: 5px;
         letter-spacing: .7px;
+
+        @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            font-size: 15px;
+        }
     }
 
     &__list {
@@ -852,6 +970,8 @@
     &__item {
         margin: 0;
         padding: 0;
+        margin-bottom: 4px;
+
     }
 
     &__link {
@@ -862,7 +982,6 @@
         font-family: $mainFont;
         border-left: 2px solid transparent;
         padding-left: 10px;
-        margin-bottom: 4px;
 
         &:hover, &:active {
             text-decoration: underline;

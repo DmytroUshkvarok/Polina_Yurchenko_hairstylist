@@ -1,15 +1,8 @@
 @import 'reset';
 @import 'normalize';
-@import 'bootstrap-overrides';
 @import '../bootstrap/assets/stylesheets/_bootstrap.scss';
-//$fa-font-path: "../fontawesome/webfonts";
-//@import "../fontawesome/scss/fontawesome";
-//@import "../fontawesome/scss/solid";
-//@import "../fontawesome/scss/regular";
-//@import "../fontawesome/scss/brands";
 @import 'vars';
 @import 'colour-matrix';
 @import 'mixins';
-//@import 'extends';
 @import 'typography';
 @import 'styles';
