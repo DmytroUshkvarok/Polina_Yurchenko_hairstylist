@@ -1,4 +1,11 @@
-/OwlCarousel2
-/got_top
-/jBox
-/lightbox2
+OwlCarousel2/
+got_top/
+jBox/
+lightbox2/
+
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+.idea/
