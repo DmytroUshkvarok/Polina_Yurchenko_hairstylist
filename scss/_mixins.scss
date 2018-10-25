@@ -38,7 +38,7 @@
             @include pseudo-sprite(226px, 55px, -10px, -1121px);
         }
 
-        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @media all and (max-width: $screen-sm-max) {
             display: none;
         }
     }
@@ -54,7 +54,7 @@
             @include pseudo-sprite(226px, 55px, -253px, -1121px);
         }
 
-        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @media all and (max-width: $screen-sm-max) {
             display: none;
         }
     }

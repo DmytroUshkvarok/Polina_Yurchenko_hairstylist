@@ -1,8 +1,9 @@
 .wrapper {
-    min-width: 320px;
+    min-width: 480px;
     max-width: 1760px;
     margin: 0 auto;
 }
+
 
 .container {
     overflow: hidden;
@@ -122,7 +123,7 @@
     margin: 200px auto 100px;
     overflow: visible;
 
-    @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @media all and (max-width: $screen-sm-max) {
         margin-bottom: 200px;
     }
 
@@ -140,6 +141,10 @@
             -webkit-filter: drop-shadow(0 0 30px #9E0067);
             filter: drop-shadow(0 0 30px #9E0067);
             transform: scale(1.07);
+        }
+
+        @media all and (max-width: $screen-xs-max) {
+            width: 430px;
         }
     }
 }
@@ -159,6 +164,11 @@
 
     @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
         background-position: -210px 150px;
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+        height: 1200px;
+        background-position: -200px 150px;
     }
 
     &__block {
@@ -188,13 +198,14 @@
                 @include pseudo-sprite(226px, 55px, -10px, -1192px);
             }
 
-            @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            @media all and (max-width: $screen-sm-max) {
                 display: none;
             }
         }
     }
 
     &__textbox {
+        @include make-xs-column-pull(12);
         @include make-md-column(8);
         @include make-md-column-pull(8);
         background: url(../images/about_master_textbox.png) no-repeat center center;
@@ -205,15 +216,22 @@
         transition: all 500ms cubic-bezier(0.4, 0, 1, 1);
 
         @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-            padding: 190px 160px;
+            padding: 195px 160px;
         }
 
         @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
             margin-top: 450px;
+            padding: 175px 190px;
+        }
+
+        @media all and (max-width: $screen-xs-max){
+            margin-top: 200px;
+            padding: 115px 120px;
         }
 
 
         &.scrolled {
+            @include make-xs-column-pull(0);
             @include make-md-column-pull(-4);
         }
 
@@ -231,6 +249,12 @@
             font-size: 22px;
             line-height: 30px;
         }
+
+        @media all and (max-width: $screen-xs-max){
+            font-size: 20px;
+            line-height: 27px;
+            @include ellipsis(8, 27px);
+        }
     }
 
     &__instagram {
@@ -247,6 +271,15 @@
             font-size: 26px;
         }
 
+        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            margin: 15px 0 20px 70px;
+        }
+
+        @media all and (max-width: $screen-xs-max){
+            font-size: 20px;
+            margin: 10px 0 15px 43px;
+        }
+
         &:hover, &:visited, &:focus, &:active {
             text-decoration: none;
             color: #fff;
@@ -260,6 +293,12 @@
             @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
                 @include pseudo-sprite(45px, 45px, -496px, -1121px);
                 left: -50px;
+            }
+
+            @media all and (max-width: $screen-xs-max){
+                @include pseudo-sprite(36px, 36px, -551px, -1121px);
+                left: -45px;
+                top: -3px;
             }
         }
     }
@@ -288,7 +327,6 @@
     }*/
 
     &__heading-box {
-        @include make-md-column(12);
         text-align: center;
     }
 
@@ -310,7 +348,7 @@
         margin: 80px 0;
         position: relative;
 
-        @media all and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @media all and (max-width: $screen-sm-max) {
             flex-wrap: wrap;
             margin-top: 110px;
         }
@@ -384,6 +422,7 @@
     }
 
     &__gallery {
+        @include make-xs-column(10);
         @include make-sm-column(12);
         @include make-md-column(8);
         max-height: 230px;
