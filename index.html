@@ -11,38 +11,38 @@
 
     <!--jQuery-->
 
-    <script src="./jquery/dist/jquery.min.js"></script>
+    <script async src="./jquery/dist/jquery.min.js"></script>
 
     <!--Main JS-->
 
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
 
     <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />-->
 
     <!--LightBox-->
 
     <script src="./lightbox2/dist/js/lightbox.min.js"></script>
-    <link rel="stylesheet" href="./lightbox2/dist/css/lightbox.min.custom.css">
+    <link rel="stylesheet" href="./lightbox2/dist/css/lightbox.min.custom.css" />
 
     <!--Owl Carousel-->
 
-    <script src="./OwlCarousel2/dist/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="./OwlCarousel2/dist/assets/owl.theme.default.css">
-    <link rel="stylesheet" href="./OwlCarousel2/dist/assets/owl.carousel.min.css">
+    <script defer src="./OwlCarousel2/dist/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="./OwlCarousel2/dist/assets/owl.theme.default.css" />
+    <link rel="stylesheet" href="./OwlCarousel2/dist/assets/owl.carousel.min.css" />
 
     <!--ScrollSpy-->
 
-    <script src="./jquery-scrollspy/scrollspy.min.js"></script>
+    <script defer src="./jquery-scrollspy/scrollspy.min.js"></script>
 
     <!--jBox-->
 
-    <script src="./jBox/Source/jBox.min.js"></script>
-    <link rel="stylesheet" href="./jBox/Source/jBox.css">
+    <script async src="./jBox/Source/jBox.min.js"></script>
+    <link rel="stylesheet" href="./jBox/Source/jBox.css" />
 
     <!--Go to TOP Button-->
 
-    <script src="./got_top/js/go_top.js"></script>
-    <link rel="stylesheet" href="./got_top/css/go_top.css">
+    <script defer src="./got_top/js/go_top.js"></script>
+    <link rel="stylesheet" href="./got_top/css/go_top.css" />
 
 </head>
 
@@ -892,97 +892,97 @@
 <!--LightBox-->
 
 <script>
-    lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true
-    })
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+  })
 </script>
 
 <!--Owl Carousel-->
 
-<script>
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            items: 3,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            margin: 15,
-            dots: true,
-            autoHeight: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                992: {
-                    items: 3
-                }
-            }
-        });
+<script defer>
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      items: 3,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      margin: 15,
+      dots: true,
+      autoHeight: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        992: {
+          items: 3
+        }
+      }
     });
+  });
 </script>
 
 <!--ScrollSpy-->
 
-<script>
-    $(document).ready(function(){
-        $("#navigation").scrollspy({
-            activeClass: 'navigation__item--active'
-        });
-    })
+<script defer>
+  $(document).ready(function(){
+    $("#navigation").scrollspy({
+      activeClass: 'navigation__item--active'
+    });
+  })
 </script>
 
 <!--jBox-->
 
-<script>
-    new jBox('Modal', {
-        attach: '#evening-and-wedding-button',
-        content: $('#program-evening-and-wedding')
-    });
-    new jBox('Modal', {
-        attach: '#evening-and-wedding-down-button',
-        content: $('#program-evening-and-wedding')
-    });
+<script defer>
+  new jBox('Modal', {
+    attach: '#evening-and-wedding-button',
+    content: $('#program-evening-and-wedding')
+  });
+  new jBox('Modal', {
+    attach: '#evening-and-wedding-down-button',
+    content: $('#program-evening-and-wedding')
+  });
 
-    new jBox('Modal', {
-        attach: '#tufts-button',
-        content: $('#program-tufts')
-    });
-    new jBox('Modal', {
-        attach: '#tufts-down-button',
-        content: $('#program-tufts')
-    });
+  new jBox('Modal', {
+    attach: '#tufts-button',
+    content: $('#program-tufts')
+  });
+  new jBox('Modal', {
+    attach: '#tufts-down-button',
+    content: $('#program-tufts')
+  });
 
-    new jBox('Modal', {
-        attach: '#curls-button',
-        content: $('#program-curls')
-    });
-    new jBox('Modal', {
-        attach: '#curls-down-button',
-        content: $('#program-curls')
-    });
+  new jBox('Modal', {
+    attach: '#curls-button',
+    content: $('#program-curls')
+  });
+  new jBox('Modal', {
+    attach: '#curls-down-button',
+    content: $('#program-curls')
+  });
 
-    new jBox('Modal', {
-        attach: '#for-myself-button',
-        content: $('#program-for-myself')
-    });
-    new jBox('Modal', {
-        attach: '#for-myself-down-button',
-        content: $('#program-for-myself')
-    });
+  new jBox('Modal', {
+    attach: '#for-myself-button',
+    content: $('#program-for-myself')
+  });
+  new jBox('Modal', {
+    attach: '#for-myself-down-button',
+    content: $('#program-for-myself')
+  });
 
-    new jBox('Modal', {
-        attach: '#mother-daughter-button',
-        content: $('#program-mother-daughter')
-    });
-    new jBox('Modal', {
-        attach: '#mother-daughter-down-button',
-        content: $('#program-mother-daughter')
-    });
+  new jBox('Modal', {
+    attach: '#mother-daughter-button',
+    content: $('#program-mother-daughter')
+  });
+  new jBox('Modal', {
+    attach: '#mother-daughter-down-button',
+    content: $('#program-mother-daughter')
+  });
 </script>
 
 <!--<script async defer

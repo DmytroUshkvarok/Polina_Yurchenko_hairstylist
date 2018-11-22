@@ -294,7 +294,6 @@
         &::before {
             @include pseudo-sprite(50px, 50px, -550px, -511px);
             position: absolute;
-            left: -60px;
 
             @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
                 @include pseudo-sprite(45px, 45px, -496px, -1121px);
